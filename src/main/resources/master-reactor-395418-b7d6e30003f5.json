@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "master-reactor-395418",
+  "private_key_id": "b7d6e30003f54454091bbb1410d1ed8f2948b9f2",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCy2vrhScIjE5tN\nBbrV08jyWYLx2kIGwbLfmwZVeQ3f3tqO5wB2nfdmoI0sGHS/yjc1PY7uwl/vcDih\nUhCfFCvUDgL6zoVJGGY1I8WP0UrIuJNafIIjEshIb3ShgwM/+FSHti9k7sIGTMmE\nShn3utNpx+CqVMhVm7wiNf8CmGJ6Hn0XUHzXIbwiTbJiwJbRIp40ZrG0H9Qnwe1Z\nPd3m3vCkwD2O3Dw67diIbmTfcu0Ls1Ki83uJClWxcG9JslH1q8lF2F78y5Lu3mU1\ngpal7uIuvAOElK8FvFcTNb17gods8zkWz8MOUAA+pBxJ3CZNTpPPGA4pmAxACfAS\na8PK1CUtAgMBAAECggEAJcTfaNbKE90ulPfKSiBUlXT4lXkZK1MZImYa0s7i8q0d\na0L10pauKXJrDW5GrT+XI/uRZPMQDkCc/NgXIXjBfqDM2UjmVZa88qjQrfus9rEf\nkOKtGpn7SGyc7QR9GbOnqhb7cC2JNIpfnbuGO02tGm/2jhGkUou2EWVkqhgi55WR\nNO4Na0P/Su293uLFCelvUrX03/NqMyeeXEN/TZcGoFCa+Wbjhf9+EJ4hDf8G/tAp\nipoqJGIYIC4k68FPAVZHRiMM8Zqpl9w2kTOY1ktPuhYqxpstFDpw9xdwrTxeP7kb\nvl8oXe05XP9f2RjxZAgGwY4TLA4WUYmStOYF21pHIQKBgQDebiKla/RsZ96tEp2r\nPKFVjGGeCnbBWfboQ+sGL+4ayK4R4RdNHOksD7Q07J3d5OrwDDMnNkuCXeD1sijW\nBvqNZZaVyWE8gK7QoBytiHcfOejRFOwEA3lcF9G1c+CmwjFjpFKSG69fH1jEpCEk\n1QaKcDqS39y8dnHmQNLLzzmvEQKBgQDN2UcaXZBuQp0aOPAGZgVFNoo//o9UvOhu\nWNo1SLTX1SYFy5JczUstRQNe3aj4SouYSHSkJkW6yLYM2sgOqc+DQFG2BmiHypOb\nxYRbc67nLUg8KTOjbTALWheFBBuQxf9ulzfba/ZCbZKPyeXDeZsDJ1/9DCqRoyOX\nH7DfUX7MXQKBgFU48YFcCXx3l7PMTCjNxCrY7JX3AGU4qQd47lWii6IrfbZP/fOH\nvjcplSwp9JqOGQ38PqUpgmjiu0yoBElsxxbh835UeDMMQu6gShybCrkmIPPrBjrL\ncfY9EhZp3YtHIFFDJnfgr6LMieBd2m0YSbdFJMwdhZ+X6jAEaj+4mCthAoGBAKyX\noeM8Uc3w8lI7LRzgS0j16sKvSDPvVB65RvPoKyDQKVowjl5bDs49EA9pYLQVpKeh\nEJNVN5/di66JfbW1sTTGJ/yrsNcyBcNUv54CB8LzF57BmPdMpDzQY+n2QLqJGJr8\nFSxXgBnAT2NaD9huzIa/a976ZXLIyx15x83mQZ9NAoGAX0hrAGw6wh56EVfbtH1l\nFeIEXmBOeMe37P9XjnMM5vUeA845xXxli56ufvfxaHb4o8dok4ONuGaUtniOSEHi\n8/85LJimVJiBKkFXTcukTrJM/usE+W3IKxmsxgySpkAZuLZznSdfTQV9O6LritZ8\nuFLNdoe87STLjIVn2m7F7nk=\n-----END PRIVATE KEY-----\n",
+  "client_email": "pwa-blue-green-app@master-reactor-395418.iam.gserviceaccount.com",
+  "client_id": "110972804596648895920",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/pwa-blue-green-app%40master-reactor-395418.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
