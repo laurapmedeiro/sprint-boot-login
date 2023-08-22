@@ -1,13 +1,13 @@
 # Spring Boot Login  with Spring Security, PostgreSQL and JWT
-This code has been created following the tutorial of Bezcoder, the post called Spring Boot Token based Authentication with Spring Security & JWT which is available [here] (https://www.bezkoder.com/spring-boot-jwt-authentication/)
+This code has been created following the tutorial of Bezcoder, the post called Spring Boot Token based Authentication with Spring Security & JWT which is available [here](https://www.bezkoder.com/spring-boot-jwt-authentication/)
 ## User Registration, Login and Authorization process.
 
-![spring-boot-login-flow](spring-boot-login-example-flow.png)
+![spring-boot-login-flow](spring-boot-login-flow.png)
 
 ## Spring Boot Server Architecture with Spring Security
 You can have an overview of our Spring Boot Server with the diagram below:
 
-![spring-boot-login-architecture](spring-boot-login-example-architecture.png)
+![spring-boot-login-architecture](spring-boot-login-architecture.png)
 
 ## Run Spring Boot application
 ```
