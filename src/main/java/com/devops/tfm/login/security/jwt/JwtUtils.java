@@ -21,6 +21,7 @@ import com.devops.tfm.login.security.services.UserDetailsImpl;
 
 import io.jsonwebtoken.*;
 import io.jsonwebtoken.io.Decoders;
+import io.jsonwebtoken.security.Keys;
 
 @Component
 public class JwtUtils {
@@ -66,9 +67,12 @@ public class JwtUtils {
   }
 
   public Key key() {
-    String algorithm = SignatureAlgorithm.HS256.getJcaName();
-    byte[] secret = Decoders.BASE64.decode(jwtSecret);
-    return new SecretKeySpec(secret, algorithm);
+    /*
+     * String algorithm = SignatureAlgorithm.HS256.getJcaName();
+     * byte[] secret = Decoders.BASE64.decode(jwtSecret);
+     * return new SecretKeySpec(secret, algorithm);
+     */
+    return Keys.hmacShaKeyFor(Decoders.BASE64.decode(jwtSecret));
   }
 
   public boolean validateJwtToken(String authToken) {
@@ -99,7 +103,7 @@ public class JwtUtils {
         .setId(UUID.randomUUID().toString())
         .setIssuedAt(Date.from(Instant.now()))
         .setExpiration(new Date((new Date()).getTime() + jwtExpirationMs))
-        .signWith(key())
+        .signWith(key(), SignatureAlgorithm.HS256)
         .compact();
   }
 }

@@ -11,6 +11,7 @@ You can have an overview of our Spring Boot Server with the diagram below:
 
 ## Run Spring Boot application
 ```
+mvn clean install (for skipping test, add -Dmaven.test.skip=true)
 mvn spring-boot:run
 ```
 
