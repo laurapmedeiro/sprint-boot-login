@@ -1,4 +1,4 @@
-name: Java CI
+name: Java Spring Boot CI/CD
 
 on: [push]
 
@@ -12,7 +12,7 @@ jobs:
         with:
           java-version: '17'
           distribution: 'temurin'
-      - run: mvn clean compile package -Dmaven.test.skip=true
+      - run: mvn clean compile package -Dmaven.test.skip=true -Dspring-boot.run.profiles=prod
       - run: mkdir staging && cp target/*.jar staging
       - uses: actions/upload-artifact@v3
         with:
