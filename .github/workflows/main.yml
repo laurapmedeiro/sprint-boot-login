@@ -8,7 +8,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      - name: Build JAR
       - uses: actions/setup-java@v3
         with:
           java-version: '17'
@@ -19,7 +18,11 @@ jobs:
         with:
           name: Package
           path: staging
-
-      - uses: actions/checkout@v2
-      - name: Build the Docker image
-      - run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+          
+  create-docker-image:
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v2
+        - name: Build the Docker image
+        - run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+  
