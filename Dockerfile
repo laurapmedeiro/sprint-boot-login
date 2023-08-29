@@ -4,6 +4,6 @@ RUN apk add --no-cache bash
 
 WORKDIR /app
 
-COPY staging/spring-boot-login-0.0.1-SNAPSHOT.jar /app/app.jar
+COPY  /home/runner/work/sprint-boot-login/sprint-boot-login/target/spring-boot-login-0.0.1-SNAPSHOT.jar /app/app.jar
 
 ENTRYPOINT ["java", "-jar", "app.jar"]
