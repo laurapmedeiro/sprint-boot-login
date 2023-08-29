@@ -18,11 +18,10 @@ jobs:
         with:
           name: Package
           path: staging
-          
+
   create-docker-image:
-      runs-on: ubuntu-latest
-      steps:
-        - uses: actions/checkout@v2
-        - name: Build the Docker image
-        - run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
-  
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build the Docker image
+        run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
