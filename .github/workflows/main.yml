@@ -48,7 +48,6 @@ jobs:
           registry: gcr.io
           username: _json_key
           password: ${{ secrets.GCR_JSON_KEY }}
-        #run: echo "${{ secrets.GCR_TOKEN }}" | docker login -u _json_key --password-stdin https://gcr.io
         
       - name: Build the Docker image
         run: docker build . --file Dockerfile --tag gcr.io/master-reactor-395418/spring-boot-login:$(date +%s)
