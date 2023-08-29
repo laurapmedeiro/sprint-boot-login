@@ -18,11 +18,22 @@ jobs:
         with:
           name: Package
           path: staging
+      - uses: actions/upload-artifact@v2  # Upload the artifact to be passed to the next job
+        with:
+          name: java-jar-artifact
+          path: staging
 
   create-docker-image:
     needs: build  # Specify that create docker image depends on the 'build' job
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+
+      - name: Download JAR artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: java-jar-artifact
+          path: staging
+
       - name: Build the Docker image
         run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
