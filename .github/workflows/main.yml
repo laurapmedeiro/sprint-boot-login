@@ -20,6 +20,7 @@ jobs:
           path: staging
 
   create-docker-image:
+    needs: build  # Specify that create docker image depends on the 'build' job
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
