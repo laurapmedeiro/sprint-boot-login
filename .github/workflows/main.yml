@@ -42,5 +42,5 @@ jobs:
 
       - name: Build and Push Docker image
         run: |
-          docker build . --file Dockerfile --tag spring-boot-login:$GITHUB_RUN_NUMBER .
+          docker build --file Dockerfile --tag spring-boot-login:$GITHUB_RUN_NUMBER .
           docker push $DOCKER_IMAGE_TAG
