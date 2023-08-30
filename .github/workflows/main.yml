@@ -7,24 +7,28 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v3 
+        with:
+          fetch-depth: 1  # Shallow clone for faster checkout
+
       - uses: actions/setup-java@v3
         with:
           java-version: '17'
-          distribution: 'temurin'
-      - run: mvn clean compile package -Dmaven.test.skip=true -Dspring-boot.run.profiles=prod
-      - run: mkdir staging && cp target/*.jar staging
-      - uses: actions/upload-artifact@v3
+
+      - name: Build and Upload Artifact
+        run: |
+          mvn clean compile package -Dmaven.test.skip=true -Dspring-boot.run.profiles=prod
+          mkdir staging && cp target/*.jar staging
+          echo "DOCKER_IMAGE_TAG=spring-boot-login:$GITHUB_RUN_NUMBER" >> $GITHUB_ENV  # Store image tag in an environment variable
+        # Upload the artifact without using deprecated 'save-state'
+      - name: Upload JAR artifact
+        uses: actions/upload-artifact@v2
         with:
-          name: Package
-          path: staging
-      - uses: actions/upload-artifact@v2  # Upload the artifact to be passed to the next job
-        with:
-          name: java-jar-artifact
-          path: staging
+            name: java-jar-artifact
+            path: staging
 
   create-docker-image:
-    needs: build  # Specify that create docker image depends on the 'build' job
+    needs: build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -34,18 +38,14 @@ jobs:
         with:
           name: java-jar-artifact
           path: staging
-      
+
       - name: Log in to Docker Hub
         uses: docker/login-action@v1
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
-      
-        
-      - name: Build and push Docker image
-        uses: docker/build-push-action@v2
-        with:
-          context: .
-          file: ./Dockerfile
-          push: true
-          tags: spring-boot-login:${{ github.run_number }}
+
+      - name: Build and Push Docker image
+        run: |
+          docker build . --file Dockerfile --tag $DOCKER_IMAGE_TAG .
+          docker push $DOCKER_IMAGE_TAG
