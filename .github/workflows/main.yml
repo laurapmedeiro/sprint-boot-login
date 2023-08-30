@@ -15,7 +15,6 @@ jobs:
 
       - run: mvn clean compile package -Dmaven.test.skip=true -Dspring-boot.run.profiles=prod
       - run: mkdir staging && cp target/*.jar staging
-      - run: echo "DOCKER_IMAGE_TAG=spring-boot-login:$GITHUB_RUN_NUMBER" >> $GITHUB_ENV  # Store image tag in an environment variable
 
       - name: Upload JAR artifact
         uses: actions/upload-artifact@v2
@@ -43,5 +42,5 @@ jobs:
 
       - name: Build and Push Docker image
         run: |
-          docker build . --file Dockerfile --tag $DOCKER_IMAGE_TAG .
+          docker build . --file Dockerfile --tag spring-boot-login:$GITHUB_RUN_NUMBER .
           docker push $DOCKER_IMAGE_TAG
