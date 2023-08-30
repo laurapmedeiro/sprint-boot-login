@@ -7,20 +7,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3 
-        with:
-          fetch-depth: 1  # Shallow clone for faster checkout
-
-      - uses: actions/setup-java@v2
+      - uses: actions/checkout@v3
+      - uses: actions/setup-java@v3
         with:
           java-version: '17'
+          distribution: 'temurin'
 
-      - name: Build and Upload Artifact
-        run: |
-          mvn clean compile package -Dmaven.test.skip=true -Dspring-boot.run.profiles=prod
-          mkdir staging && cp target/*.jar staging
-          echo "DOCKER_IMAGE_TAG=spring-boot-login:$GITHUB_RUN_NUMBER" >> $GITHUB_ENV  # Store image tag in an environment variable
-        # Upload the artifact without using deprecated 'save-state'
+      - run: mvn clean compile package -Dmaven.test.skip=true -Dspring-boot.run.profiles=prod
+      - run: mkdir staging && cp target/*.jar staging
+      - run: echo "DOCKER_IMAGE_TAG=spring-boot-login:$GITHUB_RUN_NUMBER" >> $GITHUB_ENV  # Store image tag in an environment variable
+
       - name: Upload JAR artifact
         uses: actions/upload-artifact@v2
         with:
