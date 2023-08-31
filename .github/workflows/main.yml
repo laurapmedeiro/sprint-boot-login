@@ -47,5 +47,5 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tsg: laurapmedeiro/pwa-tfm:spring-boot-login-0.0.1
+          tag: laurapmedeiro/pwa-tfm:spring-boot-login-0.0.1
        
