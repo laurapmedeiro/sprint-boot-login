@@ -49,9 +49,8 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tag: spring-boot-login:latest
+          tag: laurapmedeiro:pwa-tfm/spring-boot-login:latest
 
       - name: Inspect
-        run: |
-          docker image inspect spring-boot-login:latest
+        run: docker image inspect laurapmedeiro:pwa-tfm/spring-boot-login:latest
        
