@@ -1,9 +1,7 @@
 FROM eclipse-temurin:17
 
-RUN apk add --no-cache bash
-
 WORKDIR /app
 
-COPY  staging/spring-boot-login-0.0.1-SNAPSHOT.jar /app/app.jar
+COPY  staging/spring-boot-login-0.0.1-SNAPSHOT.jar /app/spring-boot-login.jar
 
-ENTRYPOINT ["java", "-jar", "app.jar"]
+ENTRYPOINT ["java", "-jar", "spring-boot-login.jar"]
