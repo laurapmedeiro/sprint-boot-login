@@ -47,5 +47,5 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          labels: spring-boot-login:$GITHUB_RUN_NUMBER
+          tsg: laurapmedeiro/pwa-tfm:spring-boot-login-0.0.1
        
