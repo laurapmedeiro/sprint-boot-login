@@ -52,4 +52,4 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tag: laurapmedeiro/pwa-tfm:spring-boot-login:latest   
+          tag: laurapmedeiro/pwa-tfm:${{ github.sha }} 
