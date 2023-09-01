@@ -46,10 +46,8 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
-      - name: Build and Push Docker image
-        uses: docker/build-push-action@v1
-        with:
-          context: .
-          file: ./Dockerfile
-          push: true
-          tag: laurapmedeiro/pwa-tfm:${{ github.sha }} 
+      - name: Build docker image
+        run: docker build . --file Dockerfile --tag laurapmedeiro/pwa-tfm:${{ github.sha }}
+
+      - name: Push image
+        run: docker push laurapmedeiro/pwa-tfm:${{ github.sha }}
